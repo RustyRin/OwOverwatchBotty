@@ -8,7 +8,6 @@ This is a discord bot for my overwatch friend Discord server
   - [ ] Discord Secrets
   - [ ] TMDB
   - [ ] Overseerr
-  - 
 - [ ] Server settings
   - [ ] Edit server settings through commands
     - [ ] QOTD
