@@ -1,3 +1,6 @@
+# dont upload secrets, you idiot
+secrets/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
