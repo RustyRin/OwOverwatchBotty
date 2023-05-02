@@ -105,5 +105,11 @@ This is a discord bot for my overwatch friend Discord server
     - [ ] Mod
     - [ ] See level
     - [ ] Make lots of funny levels
+- [ ] Fix my old starboard system
+  - [ ] Read reactions
+  - [ ] Support all emojis
+  - [ ] If it has media, include media in starboard post
+  - [ ] If it's a link, re-host media so the embed looks nice
+  - [ ] Update numbers on starboard post as more reactions are added/ removed
 - [ ] Music?
   - Can I copy someone's code?
