@@ -1,2 +1,110 @@
 # OwOverwatchBotty
 This is a discord bot for my overwatch friend Discord server
+
+---
+
+## Working on:  
+- [ ] Secrets file(s)
+  - [ ] Discord Secrets
+  - [ ] TMDB
+  - [ ] Overseerr
+  - 
+- [ ] Server settings
+  - [ ] Edit server settings through commands
+    - [ ] QOTD
+    - [ ] Duolingo
+- [ ] User Database
+  - [ ] Save user settings to database file
+  - [ ] Change user settings through commands
+- [ ] Help commands
+- [ ] Logging to a Discord Channel
+- [ ] Question of the day
+  - [ ] Having a DB of questions
+    - [ ] Support questions with no buttons/ reactions
+    - [ ] Support questions with canned/ pre-made answers
+    - [ ] Support questions that are links to tier list maker
+    - [ ] Support questions that use pictures (I need to get an example, but it is like the "one has to go" kind of image)
+  - [ ] Post from that DB
+  - [ ] Through commands, add questions
+    - [ ] Add plain questions
+    - [ ] Add canned/ pre-made answer questions
+    - [ ] Add tier list questions
+    - [ ] Add picture questions
+  - [ ] Through commands, remove questions/ canned answers
+    - [ ] Remove entire questions
+    - [ ] Remove particular canned questions
+- [ ] Duolingo leaderboard
+  - [ ] Settings support
+  - [ ] Add user
+  - [ ] Update info
+  - [ ] Leaderboard
+    - [ ] XP leaderboard
+    - [ ] Streak leaderboard
+    - [ ] Crowns Leaderboard
+    - [ ] Language leaderboard(s)
+- [ ] Overwatch
+  - [ ] Competitive 
+    - [ ] Add battle net
+    - [ ] Update comp info
+    - [ ] Leaderboard
+      - [ ] Convert tiers to sr
+      - [ ] Server average
+  - [ ] Season awards  
+    - [ ] Boop!
+      - highest nuumber of enviromental kills
+    - [ ] Shield Buster
+      - Highest damage to shields
+    - [ ] Who's on cart? Me!
+      - Highest objective time
+    - [ ] Team Player
+      - Highest nubmer of assissts 
+    - [ ] Putting on a Clinic
+      - Highest healing in one game
+    - [ ] Stop, Drop and Roll!
+      - Highest time on fire
+    - [ ] This dude is using wallhacks!
+      - Highest number of recon assists
+    - [ ] Contesting Contest
+      - Most time contesting point
+    - [ ] Two birds, one stone
+      - Largest multi-kill (probably most multi-kills)
+    - [ ] One Man Army / Fine, I'll do it myself
+      - Highest number of solo kills
+    - [ ] Immortal
+      - Lowest deaths per 10
+    - [ ] GAMER!
+      - Highest time played
+    - [ ] Lucky charm
+      - Highest win percentage
+    - [ ] Coinflip
+      - Highest number of tied games
+    - [ ] Efficient
+      - Highest KDA
+    - [ ] Boxing
+      - Highest number of melee killls
+    - [ ] Dead IRL
+      - Highest deaths per 10 min
+- [ ] Movie night things
+  - [ ] Search for movie
+  - [ ] Add movie to watchlist
+  - [ ] Find CW
+  - [ ] Show watchlist
+  - [ ] Remove from watchlist
+  - [ ] Schedule an event to watch something?
+  - [ ] Auto download/ Overseerr requests
+- [ ] Points
+  - [ ] Bonks
+    - [ ] Add
+    - [ ] Remove
+    - [ ] See level
+  - [ ] Deez Nuts
+    - [ ] Add
+    - [ ] Remove
+    - [ ] See level
+  - [ ] (Fake) Ban/ Mod
+    - [ ] Ban
+    - [ ] Mod
+    - [ ] See level
+    - [ ] Make lots of funny levels
+- [ ] Music?
+  - Can I copy someone's code?
