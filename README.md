@@ -17,6 +17,12 @@ This is a discord bot for my overwatch friend Discord server
   - [ ] Change user settings through commands
 - [ ] Help commands
 - [ ] Logging to a Discord Channel
+- [ ] Twitter updates
+  - Command to have tweets posted to a channel, options to ignore replies
+  - [ ] Get tweets when they are made
+  - [ ] Filter out replies
+  - [ ] If it is a reply, give the original tweet reply and not the retweet url
+  - [ ] Option to either just post a url, or make a custom embed
 - [ ] Question of the day
   - [ ] Having a DB of questions
     - [ ] Support questions with no buttons/ reactions
