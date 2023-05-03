@@ -1,6 +1,9 @@
 # dont upload secrets, you idiot
 **/secrets/*.txt
 
+# ignore server settings db
+/database/server_info/server_settings.db
+
 # ignore my pycharm files
 .idea/
 
