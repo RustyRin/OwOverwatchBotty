@@ -1,5 +1,5 @@
 # dont upload secrets, you idiot
-secrets/*.txt
+**/secrets/*.txt
 
 # ignore my pycharm files
 .idea/
