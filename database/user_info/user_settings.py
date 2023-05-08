@@ -75,3 +75,26 @@ class UserSettings(UserSettingsDefaults):
 
         self.__cursor.execute(f"INSERT INTO users (user_id) VALUES ({row_name})")
         self.__connection.commit()
+
+    def add_col(self, col_name: str, data_type: str):
+        """Adds a column (setting for the user) to the database"""
+
+        if self.exists_column(col_name=col_name):
+            raise Exception("The column \"" + col_name + "\" already exists in the user table!")
+        else:
+
+            # processing the type input
+            # processing input type
+            if data_type == "int":
+                data_type = "INTEGER"
+            elif data_type == "float":
+                data_type = "REAL"
+            elif data_type == "str":
+                data_type = "TEXT"
+            elif (data_type == "bytes") or (data_type == "byte"):
+                data_type = "BLOB"
+            else:
+                raise Exception("Unsupported type \"" + data_type
+                                + "\". Please use one of the following: int, float, str, bytes")
+
+            self.__cursor.execute("""ALTER TABLE users ADD COLUMN """ + col_name + """ """ + data_type)
