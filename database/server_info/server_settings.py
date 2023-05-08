@@ -64,6 +64,7 @@ ow comp
 
 """
 import os.path
+import re
 import sqlite3
 
 """
@@ -72,6 +73,10 @@ need a function to scrub inputs for injections!!!!
 need a db_backup function to save db to file in a file format like `server_settings_1683128690.db`
     where the big number is unix time
 """
+
+
+def sanitize_input(input_string):
+    return re.sub(r'[^a-zA-Z0-9]', '', input_string)
 
 
 class ServerSettingsDefaults:
@@ -171,6 +176,9 @@ class ServerSettings(ServerSettingsDefaults):
 
     def cell_update(self, row_name: str, col_name: str, data):
         # updates data in the database
+
+        # clean data
+        data = sanitize_input(data)
 
         if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
             self.__cursor.execute(f"UPDATE servers SET {col_name} = {data} WHERE server_id = {row_name}")
