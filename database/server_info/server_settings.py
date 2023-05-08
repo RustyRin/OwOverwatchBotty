@@ -132,7 +132,6 @@ class ServerSettings(ServerSettingsDefaults):
 
         # check if row exists
         if self.exists_row(row_name=row_name):
-            print(self.exists_row(row_name=row_name))
             raise Exception("The row \"" + row_name + "\" already exists in the server table!")
         else:
             # row does not exist
@@ -169,7 +168,6 @@ class ServerSettings(ServerSettingsDefaults):
         if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
             self.__cursor.execute(f"SELECT {col_name} FROM servers WHERE server_id = {row_name}")
             results = self.__cursor.fetchone()
-            print(results[0])
         else:
             raise Exception("The row or col you passed does not exist in the database")
         pass
