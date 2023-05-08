@@ -62,3 +62,16 @@ class UserSettings(UserSettingsDefaults):
                 return True
 
         return False
+
+    def add_row(self, row_name: str):
+        """Adds a row (individual user) to the user database with a given user id"""
+
+        if self.exists_row(row_name=row_name):
+            raise Exception("The row \"" + row_name + "\" already exists in the user table")
+        else:
+            # the row does not exist
+            # you can cont.
+            pass
+
+        self.__cursor.execute(f"INSERT INTO users (user_id) VALUES ({row_name})")
+        self.__connection.commit()
