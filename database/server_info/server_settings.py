@@ -167,7 +167,7 @@ class ServerSettings(ServerSettingsDefaults):
         # returns data at that coor in the db. if empty, will return None. if cell doesn't exist, will throw exception
         if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
             self.__cursor.execute(f"SELECT {col_name} FROM servers WHERE server_id = {row_name}")
-            results = self.__cursor.fetchone()
+            return self.__cursor.fetchone()
         else:
             raise Exception("The row or col you passed does not exist in the database")
         pass
