@@ -75,7 +75,7 @@ need a db_backup function to save db to file in a file format like `server_setti
 """
 
 
-def sanitize_input(input_string):
+def sanitize_input(input_string: str) -> str:
     return re.sub(r'[^a-zA-Z0-9]', '', input_string)
 
 
