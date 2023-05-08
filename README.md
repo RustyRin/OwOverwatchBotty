@@ -3,9 +3,14 @@ This is a discord bot for my overwatch friend Discord server
 
 ---
 
+## Current Active Work
+
+
+---
+
 ## Working on:  
 - [ ] Secrets file(s)
-  - [ ] Discord Secrets
+  - [x] Discord Secrets
   - [ ] TMDB
   - [ ] Overseerr
 - [ ] Server settings
@@ -119,3 +124,11 @@ This is a discord bot for my overwatch friend Discord server
   - [ ] Update numbers on starboard post as more reactions are added/ removed
 - [ ] Music?
   - Can I copy someone's code?
+
+---
+
+## Done!
+- [X] Working on Getting/ Setting Data from SQLite databases
+  - [X] Getting/ Setting server settings
+    - [X] Setting
+    - [X] Getting
