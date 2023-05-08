@@ -108,3 +108,13 @@ class UserSettings(UserSettingsDefaults):
         else:
             raise Exception("The row or column you passed does not exist in the database")
 
+    def cell_update(self, row_name: str, col_name: str, data):
+        """Updates a cell with a given row (user id) and column name (setting)"""
+
+        data = sanitize_input(data)
+
+        if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
+            self.__cursor.execute(f"UPDATE users SET {col_name} = {data} WHERE user_id = {row_name}")
+            self.__connection.commit()
+        else:
+            raise Exception("The row or column you passed does not exist in the database!")
