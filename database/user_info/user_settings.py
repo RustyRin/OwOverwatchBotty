@@ -98,3 +98,13 @@ class UserSettings(UserSettingsDefaults):
                                 + "\". Please use one of the following: int, float, str, bytes")
 
             self.__cursor.execute("""ALTER TABLE users ADD COLUMN """ + col_name + """ """ + data_type)
+
+    def cell_read(self, row_name: str, col_name: str):
+        """Reads the cell that matches the row (user id) and the column (setting)"""
+
+        if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
+            self.__cursor.execute(f"SELECT {col_name} FROM users WHERE user_id = {row_name}")
+            return self.__cursor.fetchone()
+        else:
+            raise Exception("The row or column you passed does not exist in the database")
+
