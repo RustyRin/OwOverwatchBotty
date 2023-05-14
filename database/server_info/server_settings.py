@@ -132,7 +132,7 @@ class ServerSettings(ServerSettingsDefaults):
 
         # check if row exists
         if self.exists_row(row_name=row_name):
-            raise Exception("The row \"" + row_name + "\" already exists in the server table!")
+            raise sqlite3.OperationalError("The row \"" + row_name + "\" already exists in the server table!")
         else:
             # row does not exist
             # fill with defaults / null
@@ -144,7 +144,7 @@ class ServerSettings(ServerSettingsDefaults):
     def add_col(self, col_name: str, data_type: str):
         # adds a column (setting for servers) to the database
         if self.exists_column(col_name=col_name):
-            raise Exception("The column \"" + col_name + "\" already exists in the server table!")
+            raise sqlite3.OperationalError("The column \"" + col_name + "\" already exists in the server table!")
         else:
 
             # processing input type
@@ -157,8 +157,8 @@ class ServerSettings(ServerSettingsDefaults):
             elif (data_type == "bytes") or (data_type == "byte"):
                 data_type = "BLOB"
             else:
-                raise Exception("Unsupported type \"" + data_type
-                                + "\". Please use one of the following: int, float, str, bytes")
+                raise sqlite3.DataError("Unsupported type \"" + data_type
+                                        + "\". Please use one of the following: int, float, str, bytes")
 
             self.__cursor.execute("""ALTER TABLE servers ADD COLUMN """ + col_name + """ """ + data_type)
         pass
@@ -169,7 +169,7 @@ class ServerSettings(ServerSettingsDefaults):
             self.__cursor.execute(f"SELECT {col_name} FROM servers WHERE server_id = {row_name}")
             return self.__cursor.fetchone()
         else:
-            raise Exception("The row or col you passed does not exist in the database")
+            raise sqlite3.OperationalError("The row or col you passed does not exist in the database")
         pass
 
     def cell_update(self, row_name: str, col_name: str, data):
@@ -182,7 +182,7 @@ class ServerSettings(ServerSettingsDefaults):
             self.__cursor.execute(f"UPDATE servers SET {col_name} = {data} WHERE server_id = {row_name}")
             self.__connection.commit()
         else:
-            raise Exception("The row or col you passed does not exist in the database")
+            raise sqlite3.OperationalError("The row or col you passed does not exist in the database")
         pass
 
     def toggle_logging(self, status: bool):
