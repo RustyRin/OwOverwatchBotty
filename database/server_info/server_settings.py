@@ -21,14 +21,6 @@ question of the day
     baby mode (sfw version, not implemented yet)
     blacklisted question ids (not implemented yet)
 
-points
-    enabled
-
-    bonks
-        enabled
-    fake bans
-        enabled
-
 movie list
     enabled
 
@@ -204,3 +196,23 @@ class ServerSettings(ServerSettingsDefaults):
 
         self.__check_and_create(row=self.server_id, col="logging_level", data_type="int")
         self.cell_update(row_name=self.server_id, col_name="logging_level", data=level)
+
+    def set_points_all_enabled(self, status: bool):
+        self.__check_and_create(row=self.server_id, col="points_all_enabled", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="points_all_enabled", data=int(status))
+
+    def set_points_bonks_enabled(self, status: bool):
+        self.__check_and_create(row=self.server_id, col="points_bonks_enabled", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="points_bonks_enabled", data=int(status))
+
+    def set_points_banned_enabled(self, status: bool):
+        self.__check_and_create(row=self.server_id, col="points_banned_enabled", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="points_banned_enabled", data=int(status))
+
+    def set_star_board_enabled(self, status: bool):
+        self.__check_and_create(row=self.server_id, col="star_board_enabled", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="star_board_enabled", data=int(status))
+
+    def set_star_board_channel_id(self, channel_id: int):
+        self.__check_and_create(row=self.server_id, col="star_board_channel_id", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="star_board_channel_id", data=channel_id)
