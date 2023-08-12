@@ -5,8 +5,9 @@ Python Discord Bot for my friends Overwatch (mostly) server
 
 """
 
+# PyPi Packages
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import discord.utils
 
 try:
