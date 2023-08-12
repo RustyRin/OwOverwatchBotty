@@ -32,24 +32,6 @@ points
 movie list
     enabled
 
-logging
-    enabled
-    level
-        0 basic
-            the bot is online
-            the bot is going offline if a admin does restart command
-        1
-            all above
-            question posted
-            something made the star board
-            a weekly board was posted
-                duolingo
-                ow comp
-        2
-            all above
-            points added
-    channel id of logging channel
-
 duolingo
     enabled
 
