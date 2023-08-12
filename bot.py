@@ -13,6 +13,7 @@ import discord.utils
 # Internal functions
 from functions.bot_log import bot_log
 from functions.find_server_owner import find_server_owner
+from functions.check_admin import check_admin
 
 try:
     with open("./database/secrets/discord.txt") as f:
@@ -48,6 +49,17 @@ async def server_owner(ctx):
     """Tells user who the owner of the current sever is"""
     owner: discord.User = await find_server_owner(ctx, client=discord_client)
     await ctx.send('The owner of ' + ctx.guild.name + ' is ' + owner.mention)
+
+
+@discord_client.command(aliases=["isadmin"])
+async def is_admin(ctx: discord.ext.commands.Context):
+    """Tells you if a user is an admin"""
+    results = await check_admin(ctx=ctx, client=discord_client, user=ctx.message.mentions[1].id)
+
+    if results:
+        await ctx.send(ctx.message.mentions[1].mention + ' is an admin!')
+    else:
+        await ctx.send(ctx.message.mentions[1].mention + ' is not an admin!')
 
 
 @discord_client.event
