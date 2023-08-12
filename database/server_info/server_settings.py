@@ -208,3 +208,15 @@ class ServerSettings(ServerSettingsDefaults):
     def set_logging_channel(self, channel_id: int):
         self.__check_and_create(row=str(self.server_id), col="logging_channel_id", data_type="int")
         self.cell_update(row_name=str(self.server_id), col_name="logging_channel_id", data=channel_id)
+
+    def set_logging_level(self, level: int = None):
+        if (level is None) or (level < 0) or (level > 3) or (type(level) is not int):
+            raise ValueError(
+                "Please set a correct level! \
+                \n0: Notified if bot is going on/off, \
+                \n1: All previous, changing settings, user moderation \
+                \n2: All previous, movie added, qotd posted or added/removed, weekly things (ow, duolingo, etc) posted \
+                \n3: All previous, points added, other meaningless commands used")
+
+        self.__check_and_create(row=self.server_id, col="logging_level", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="logging_level", data=level)
