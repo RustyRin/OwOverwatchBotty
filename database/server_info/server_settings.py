@@ -174,7 +174,8 @@ class ServerSettingsDefaults:
         # updates data in the database
 
         # clean data
-        data = sanitize_input(data)
+        if type(data) is str:
+            data = sanitize_input(data)
 
         if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
             self.__cursor.execute(f"UPDATE servers SET {col_name} = {data} WHERE server_id = {row_name}")
