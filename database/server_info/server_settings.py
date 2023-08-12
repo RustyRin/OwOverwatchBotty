@@ -173,6 +173,9 @@ class ServerSettingsDefaults:
     def cell_update(self, row_name: str, col_name: str, data):
         # updates data in the database
 
+        # sanity check
+        row_name = str(row_name)
+
         # clean data
         if type(data) is str:
             data = sanitize_input(data)
