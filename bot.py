@@ -31,7 +31,7 @@ discord_client = commands.Bot(
 
 @discord_client.event
 async def on_ready():
-    print("Bot running!")
+    bot_log(func1="On Ready", desc="Bot is running!")
     await discord_client.change_presence(status=discord.Status.online, activity=discord.Game("@me"))
 
 
