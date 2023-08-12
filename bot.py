@@ -67,5 +67,4 @@ async def on_ready():
     bot_log(func1="On Ready", desc="Bot is running!")
     await discord_client.change_presence(status=discord.Status.online, activity=discord.Game("@me"))
 
-
 discord_client.run(token=DISCORD_TOKEN)
