@@ -183,8 +183,25 @@ class ServerSettingsDefaults:
             self.__connection.commit()
         else:
             raise sqlite3.OperationalError("The row or col you passed does not exist in the database")
-        pass
 
-    def toggle_logging(self, status: bool):
-        """Turn logging on (True) or off (False)"""
-        pass
+
+class ServerSettings(ServerSettingsDefaults):
+
+    def __init__(self, server_id: int):
+        super().__init__()
+        self.server_id: int = server_id
+
+    def __check_and_create(self, row, col, data_type):
+        if self.exists_row(str(row)) is False:
+            self.add_row(row_name=str(row))
+
+        if self.exists_column(str(col)) is False:
+            self.add_col(col_name=str(col), data_type=data_type)
+
+    def set_logging_enabled(self, status: bool):
+        self.__check_and_create(row=self.server_id, col="logging_enabled", data_type="int")
+        self.cell_update(row_name=str(self.server_id), col_name="logging_enabled", data=int(status))
+
+    def set_logging_channel(self, channel_id: int):
+        self.__check_and_create(row=str(self.server_id), col="logging_channel_id", data_type="int")
+        self.cell_update(row_name=str(self.server_id), col_name="logging_channel_id", data=channel_id)
