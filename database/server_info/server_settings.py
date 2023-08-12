@@ -178,7 +178,8 @@ class ServerSettingsDefaults:
             data = sanitize_input(data)
 
         if self.exists_row(row_name=row_name) and self.exists_column(col_name=col_name):
-            self.__cursor.execute(f"UPDATE servers SET {col_name} = {data} WHERE server_id = {row_name}")
+            query = f"UPDATE servers SET {col_name} = ? WHERE server_id = ?"
+            self.__cursor.execute(query, (data, row_name))
             self.__connection.commit()
         else:
             raise sqlite3.OperationalError("The row or col you passed does not exist in the database")
