@@ -22,6 +22,9 @@ except FileNotFoundError:
 
 bot_prefix = commands.when_mentioned_or("!ow")
 bot_intents = discord.Intents.default()
+bot_intents.members = True
+bot_intents.presences = True
+bot_intents.messages = True
 discord_client = commands.Bot(
     command_prefix=bot_prefix,
     help_command=None,
