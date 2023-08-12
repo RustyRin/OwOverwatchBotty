@@ -177,6 +177,8 @@ class ServerSettings(ServerSettingsDefaults):
         self.server_id: int = server_id
 
     def __check_and_create(self, row, col, data_type):
+        """This checks if a row or col exists, if they don't then make them"""
+
         if self.exists_row(str(row)) is False:
             self.add_row(row_name=str(row))
 
