@@ -152,7 +152,7 @@ class ServerSettingsDefaults:
             raise sqlite3.OperationalError("The row or col you passed does not exist in the database")
         pass
 
-    def cell_update(self, row_name: str, col_name: str, data):
+    def cell_update(self, row_name: str | int, col_name: str, data):
         # updates data in the database
 
         # sanity check
@@ -185,11 +185,11 @@ class ServerSettings(ServerSettingsDefaults):
 
     def set_logging_enabled(self, status: bool):
         self.__check_and_create(row=self.server_id, col="logging_enabled", data_type="int")
-        self.cell_update(row_name=str(self.server_id), col_name="logging_enabled", data=int(status))
+        self.cell_update(row_name=self.server_id, col_name="logging_enabled", data=int(status))
 
     def set_logging_channel(self, channel_id: int):
-        self.__check_and_create(row=str(self.server_id), col="logging_channel_id", data_type="int")
-        self.cell_update(row_name=str(self.server_id), col_name="logging_channel_id", data=channel_id)
+        self.__check_and_create(row=self.server_id, col="logging_channel_id", data_type="int")
+        self.cell_update(row_name=self.server_id, col_name="logging_channel_id", data=channel_id)
 
     def set_logging_level(self, level: int = None):
         if (level is None) or (level < 0) or (level > 3) or (type(level) is not int):
