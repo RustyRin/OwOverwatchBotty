@@ -15,6 +15,9 @@ from functions.bot_log import bot_log
 from functions.find_server_owner import find_server_owner
 from functions.check_admin import check_admin
 
+# Data Objects
+from database.server_info.server_settings import ServerSettings
+
 try:
     with open("./database/secrets/discord.txt") as f:
         DISCORD_TOKEN = str(f.readline())
