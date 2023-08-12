@@ -9,8 +9,11 @@ import discord
 from discord.ext import commands, tasks
 import discord.utils
 
-with open("./database/secrets/discord.txt") as f:
-    DISCORD_TOKEN = str(f.readline())
+try:
+    with open("./database/secrets/discord.txt") as f:
+        DISCORD_TOKEN = str(f.readline())
+except FileNotFoundError:
+    raise Exception("You did not make a Discord secrets file. Make one in \"./database/secrets/discord.txt\"")
 
 bot_prefix = commands.when_mentioned_or("!ow")
 bot_intents = discord.Intents.default()
