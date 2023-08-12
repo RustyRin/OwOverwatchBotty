@@ -80,13 +80,11 @@ def sanitize_input(input_string: str) -> str:
 
 
 class ServerSettingsDefaults:
-    def __int__(self):
+
+    def __init__(self):
         self.logging = None
         self.logging_channel_id = None
 
-
-class ServerSettings(ServerSettingsDefaults):
-    def __init__(self):
         # connect to the db
         # see if the db even exists
         if os.path.exists("./database/server_info/server_settings.db"):
