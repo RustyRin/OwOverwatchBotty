@@ -10,6 +10,10 @@ import discord
 from discord.ext import commands
 import discord.utils
 
+# Internal functions
+from functions.bot_log import bot_log
+from functions.find_server_owner import find_server_owner
+
 try:
     with open("./database/secrets/discord.txt") as f:
         DISCORD_TOKEN = str(f.readline())
